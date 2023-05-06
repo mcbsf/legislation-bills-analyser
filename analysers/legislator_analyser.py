@@ -1,6 +1,6 @@
 from copy import deepcopy
 class LegislatorAnalyser:
-    #clean code misuse, generic name 'Analyser' usually implies more than 1 purpose. possible refactor
+    #clean code warning, generic name 'Analyser' usually implies more than 1 purpose. possible refactor
     def __init__(self, legislators_df, vote_results_df) -> None:
         self.legislators_df = deepcopy(legislators_df) 
         self.vote_results_df = deepcopy(vote_results_df) 
@@ -21,5 +21,5 @@ class LegislatorAnalyser:
     def get_vote_results_legislators_names(self):
         self.vote_results_df['legislators_name']
 
-    def write_csv_by_vote_type(self):
+    def write_csv(self):
         self.vote_results_df[['name', 'num_supported_bills', 'num_opposed_bills']].to_csv('output/legislators-support-oppose-count.csv', index = False)
